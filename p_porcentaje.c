@@ -8,6 +8,6 @@
  */
 int p_porcentaje (va_list n, int i)
 {
-	_putchar(37);
+	_putchar(n);
 	return (i + 1);
 }

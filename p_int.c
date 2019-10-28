@@ -3,8 +3,11 @@
 /**
  * p_int: Print an integer function
  *
- *@n: 
-*/
+ * @n: Bring the argument.
+ * @i: Int type.
+ *
+ * Return: The lenght
+ */
 int p_int(va_list n, int i)
 {
 	int div;
