@@ -3,10 +3,7 @@
 /**
  * get_pf - Get the functions to print according to format.
  *
- * @i: Index.
  * @spec: Specifier to use.
- * @ar: Argument to print.
- *
  *
  *
  * Return: Number of spaces used in printing.
@@ -29,7 +26,7 @@ int (*get_pf(char *spec))(valist, int)
 	while (j < 5)
 	{
 		if (strcmp(spec, p_functions[j].format) == 0)
-			return(p_functions[j].f);
+			return (p_functions[j].f);
 
 
 		j++;

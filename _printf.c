@@ -17,10 +17,11 @@
 int _printf(const char *format, ...)
 {
 	int i = 0;
-	va_list = arg_list;
 	int (*oper)(int, valist);
 
 	char format_list[] = {"c", "s", "%", "d", "i"};
+
+	va_list = arg_list;
 
 	va_start(arg_list, format);
 
@@ -35,7 +36,7 @@ int _printf(const char *format, ...)
 				if (*(format + i) == format_list[j])
 				{
 					oper = get_pf(format_list[j]);
-					i = oper (valist, i);
+					i = oper(valist, i);
 				}
 				j++;
 			}
