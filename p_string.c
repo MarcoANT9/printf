@@ -2,8 +2,9 @@
 /**
  * p_string - Print a string.
  *
- * @i: int type
- * @n: Bring the argument
+ * @i: int type.
+ * @n: Bring the argument.
+ *
  * Return: the i position.
  */
 int p_string(va_list n, int i)
