@@ -17,7 +17,12 @@ int main(void)
 
 	_printf(NULL);
 	printf("START OF TEST\n");
+	
+	printf("\n%s\n", NULL);
+	_printf("\n%s\n", NULL);
 
+	printf(NULL);
+	_printf(NULL);
 
 	/** char */
 

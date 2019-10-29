@@ -20,7 +20,6 @@ int p_int(va_list n)
 	}
 	else
 		g = h;
-
 	if (g < 10)
 	{
 		_putchar(g + '0');

@@ -16,7 +16,7 @@
 
 int _printf(const char *format, ...)
 {
-	int i = 0, j, cont = 0, h = 0;
+	int i = 0, j, cont = 0;
 	int (*oper)(va_list);
 	char *format_list = "cs%id";
 	va_list arg_list;
@@ -28,34 +28,32 @@ int _printf(const char *format, ...)
 	{
 		if (format[i] == '%')
 		{
-			/*i++;*/
-			j = 0;
-			h = 0;
-			while (j < 5)
+			for (j = 0; j < 5; j++)
 			{
-				if (format[i + 1] == format_list[j] && h == 0)
+				if (format[i + 1] == format_list[j])
 				{
 					oper = get_pf(format_list[j]);
 					cont = cont + oper(arg_list);
-					h++;
 					i = i + 1;
 					break;
 				}
 				else
 				{
 					if (j + 1 == 5)
+					{
 						_putchar(format[i]);
+						cont++;
+					}
 				}
-				j++;
 			}
 		}
 		else
+		{
 			_putchar(format[i]);
-
+			cont++;
+		}
 		i++;
 	}
 	va_end(arg_list);
-	cont = cont + i - 2;
-
 	return (cont);
 }
