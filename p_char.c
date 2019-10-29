@@ -8,10 +8,9 @@
  */
 int p_char(va_list n)
 {
-	int i = 0;
 
 	char h = va_arg(n, int);
 
 	_putchar(h);
-	return (i + 1);
+	return (1);
 }

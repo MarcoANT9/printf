@@ -11,10 +11,16 @@ int p_string(va_list n)
 	int i = 0;
 
 	char *h = va_arg(n, char *);
+	char *nill = "(null)";
 
-	for (i = 0 ; h[i] != '\0' ; i++)
-		_putchar(h[i]);
+	if (h == NULL)
+		for (i = 0; nill[i] != '\0'; i++)
+			_putchar(nill[i]);
+	else
+	{
+		for (i = 0 ; h[i] != '\0' ; i++)
+			_putchar(h[i]);
+	}
 
-
-	return (i - 1);
+	return (i);
 }

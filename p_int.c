@@ -9,38 +9,45 @@
  */
 int p_int(va_list n)
 {
-	int h;
-	unsigned int cont = 0, g, base = 1;
-	int i = 0;
+	int h, i = 0;
+	unsigned int cont = 0, g, f, base = 1;
 
 	h = va_arg(n, int);
-
 	if (h < 0)
 	{
 		_putchar('-');
-		h = h * -1;
+		g = h * -1;
 	}
-	g = h;
-	while (g != 0)
+	else
+		g = h;
+
+	if (g < 10)
 	{
-		g = g / 10;
-		cont++;
-		base = base * 10;
-	}
-	g = h;
-	base = base / 10;
-	while (g != 0)
-	{
-		_putchar((g / base) + '0');
-		g = g % base;
-		base = base / 10;
+		_putchar(g + '0');
 		i++;
-		if (base == 1)
+	}
+	else
+	{
+		f = g;
+		while (f != 0)
 		{
-			_putchar((g % 10) + '0');
-			break;
+			f = f / 10;
+			cont++;
+			base = base * 10;
 		}
+/**		base = base / 10; */
+		while (g != 0)
+		{
+			_putchar((g / base) + '0');
+			g = g % base;
+			base = base / 10;
+			if (base == 1)
+			{
+				_putchar(g + '0');
+				break;
+			}
+		}
+		i = cont;
 	}
 	return (i);
-
 }
