@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <limits.h>
-
+#include <unistd.h>
 
 /**
  * struct functions - Call the functions to print.
@@ -18,23 +18,27 @@
 
 typedef struct functions
 {
-	char *format;
+	char format;
 
-	void (*f)(char *s);
-
+	int (*f)(va_list);
 
 } func;
 
-/** Putchar function */
+/** Function used to get other print functions */
+int (*get_pf(char))(va_list);
+
+/** Functions used to print each case */
+int p_char(va_list);
+int p_string(va_list);
+int p_int(va_list);
+int p_porcentaje(va_list);
+
+/** Write */
 int _putchar(char c);
 
 
-/** Function used to get other print functions */
-int get_pf(int, char *, va_list);
-
-/** Functions used to print each case */
-
-
+/** Printf */
+int _printf(const char *format, ...);
 
 
 #endif

@@ -9,23 +9,24 @@
  * Return: Number of spaces used in printing.
  */
 
-int (*get_pf(char *spec))(valist, int)
+int (*get_pf(char spec))(va_list)
 {
-	func p_functions {
-
-		{"c", p_char},
-		{"s", p_string},
-		{"%", p_porcentaje},
-		{"d", p_int},
-		{"i", p_int},
-		{NULL, NULL}
-	};
 
 	int j = 0;
 
+	func p_functions[] = {
+
+		{'c', p_char},
+		{'s', p_string},
+		{'%', p_porcentaje},
+		{'d', p_int},
+		{'i', p_int},
+		{'\0', NULL}
+	};
+
 	while (j < 5)
 	{
-		if (strcmp(spec, p_functions[j].format) == 0)
+		if (spec == p_functions[j].format)
 			return (p_functions[j].f);
 
 

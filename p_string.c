@@ -2,17 +2,19 @@
 /**
  * p_string - Print a string.
  *
- * @i: int type.
  * @n: Bring the argument.
  *
  * Return: the i position.
  */
-int p_string(va_list n, int i)
+int p_string(va_list n)
 {
-	char *j;
+	int i = 0;
 
-	j = n;
-	for (i = 0 ; j[i] != '\0' ; i++)
-		_putchar(j[i]);
-	return (i);
+	char *h = va_arg(n, char *);
+
+	for (i = 0 ; h[i] != '\0' ; i++)
+		_putchar(h[i]);
+
+
+	return (i - 1);
 }

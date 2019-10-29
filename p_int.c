@@ -4,34 +4,43 @@
  * p_int - Print an integer function
  *
  * @n: Bring the argument.
- * @i: Int type.
  *
  * Return: The lenght
  */
-int p_int(va_list n, int i)
+int p_int(va_list n)
 {
-	int div;
-	int len;
-	unsigned int num;
+	int h;
+	unsigned int cont = 0, g, base = 1;
+	int i = 0;
 
-	i = va_arg(n, int);
-	div = 1;
-	len = 0;
+	h = va_arg(n, int);
 
-	if (n < 0)
+	if (h < 0)
 	{
-		len += _putchar('-');
-		num = i * -1;
+		_putchar('-');
+		h = h * -1;
 	}
-	else
-		num = i;
-	for (; num / div > 9; )
-		div *= 10;
-	for (; div != 0; )
+	g = h;
+	while (g != 0)
 	{
-		len += _putchar('0' + num / div);
-		num %= div;
-		div /= 10;
+		g = g / 10;
+		cont++;
+		base = base * 10;
 	}
-	return (len);
+	g = h;
+	base = base / 10;
+	while (g != 0)
+	{
+		_putchar((g / base) + '0');
+		g = g % base;
+		base = base / 10;
+		i++;
+		if (base == 1)
+		{
+			_putchar((g % 10) + '0');
+			break;
+		}
+	}
+	return (i);
+
 }
