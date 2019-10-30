@@ -9,10 +9,16 @@
  */
 int p_int(va_list n)
 {
-	int h, i = 0;
-	unsigned int cont = 0, g, f, base = 1;
+	unsigned int c = 0, g, f, b = 1, i = 0;
 
-	h = va_arg(n, int);
+	int h = va_arg(n, int);
+
+	if (h == 0)
+	{
+		_putchar('0');
+		return (1);
+	}
+
 	if (h < 0)
 	{
 		_putchar('-');
@@ -20,33 +26,21 @@ int p_int(va_list n)
 	}
 	else
 		g = h;
-	if (g < 10)
+	f = g; /** Temp var */
+	while (g != 0)
 	{
-		_putchar(g + '0');
-		i++;
+		g = g / 10;
+		c = c + 1; /** Digit Counter */
+		b = b * 10; /** Base for divisions */
 	}
-	else
+	i = c; /** Return Value */
+	b = b / 10;
+	while (c != 0)
 	{
-		f = g;
-		while (f != 0)
-		{
-			f = f / 10;
-			cont++;
-			base = base * 10;
-		}
-/**		base = base / 10; */
-		while (g != 0)
-		{
-			_putchar((g / base) + '0');
-			g = g % base;
-			base = base / 10;
-			if (base == 1)
-			{
-				_putchar(g + '0');
-				break;
-			}
-		}
-		i = cont;
+		_putchar((f / b) + '0');
+		f = f % b;
+		b = b / 10;
+		c = c - 1;
 	}
 	return (i);
 }
