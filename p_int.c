@@ -1,7 +1,7 @@
 #include "holberton.h"
 
 /**
- * p_int - Print an integer function
+ * p_int - Print an integer and decimal function.
  *
  * @n: Bring the argument.
  *
