@@ -10,7 +10,7 @@
 int p_int(va_list n)
 {
 	unsigned int c = 0, g, f, i = 0;
-	long unsigned int b = 1;
+	unsigned long int b = 1;
 
 	int h = va_arg(n, int);
 
