@@ -5,7 +5,7 @@
  *
  * @format: Text to print.
  *
- * Desccription -
+ * Description - Print an output
  *
  *
  *
