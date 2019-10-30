@@ -8,116 +8,23 @@
 
 int main(void)
 {
-	char *str = "hello, world";
-	char c = 'z';
-	int alen, elen;
+	printf("1. Max int %d\n", 2147483647);
+	_printf("1. Max int %d\n", 2147483647);
 
-	/** NULL */
-	printf(NULL);
+	printf("2. Min int %d\n", -2147483648);
+	_printf("2. Min int %d\n", -2147483648);
 
-	_printf(NULL);
-	printf("START OF TEST\n");
-	
-	printf("\n%s\n", NULL);
-	_printf("\n%s\n", NULL);
+	printf("3. One digit %d\n", 7);
+	_printf("3. One digit %d\n", 7);
 
-	printf(NULL);
-	_printf(NULL);
+	printf("4. Negative %d\n", -447);
+	_printf("4. Negative %d\n", -447);
 
-	/** char */
+	printf("5. Zero %d\n", 0);
+	_printf("5. Zero %d\n", 0);
 
-	_printf("=====================\n");
-	_printf("*****CHAR*****\n");
-	_printf("=====================\n");
-
-	_printf("1000: %d\n", 1000);
-
-	printf("1.Expected   : %cAAA\n", 'a');
-	_printf("1.Actual     : %cAAA\n", 'a');
-
-	elen = printf("2.Expected   : %c\n", c);
-	alen = _printf("2.Actual     : %c\n", c);
-
-	printf("3.Expected   : %i\n", elen);
-	_printf("3.Actual     : %i\n", alen);
-
-	printf("N.Expected   : %i\n", 1234);
-	_printf("N.Actual     : %i\n", 1234);
-
-	elen = printf(NULL);
-	alen = _printf(NULL);
-
-	printf("4.Expected   : %i\n", elen);
-	_printf("4.Actual     : %i\n", alen);
-
-	printf("5.Expected   : %cc\n", 'a');
-	_printf("5.Actual     : %cc\n", 'a');
-
-	printf("6.Expected   : %yd\n");
-	_printf("6.Actual     : %yd\n");
-
-	printf("7.Expected   : %c\n", 53);
-	_printf("7.Actual     : %c\n", 53);
-
-	printf("8.Expected   : %c\n", '\0');
-	_printf("8.Actual     : %c\n", '\0');
-
-	printf("9.Expected   : %%%c\n", 'y');
-	_printf("9.Actual     : %%%c\n", 'y');
-
-	/** strings */
-	printf("=====================\n");
-	printf("*****STRINGS*****\n");
-	printf("=====================\n");
-
-
-	alen = elen = 0;
-
-	printf("10.Expected   : %s\n", "holberton");
-	_printf("10.Actual     : %s\n", "holberton");
-
-	printf("11.Expected   : %s$\n", "");
-	_printf("11.Actual     : %s$\n", "");
-
-	elen = printf("12.Expected   : %s\n", str);
-	alen = _printf("12.Actual     : %s\n", str);
-
-	printf("13.Expected   : %s$\n", NULL);
-	_printf("13.Actual     : %s$\n", NULL);
-
-	printf("14.Expected   : %i\n", elen);
-	_printf("14.Actual     : %i\n", alen);
-
-	printf("15.Expected   : %sschool\n", "holberton");
-	_printf("15.Actual     : %sschool\n", "holberton");
-
-
-
-	/** %% */
-	alen = elen = 0;
-
-	printf("=====================\n");
-	printf("*****PERCENT*****\n");
-	printf("=====================\n");
-
-	elen = printf("16.Expected   : %%\n");
-	alen = _printf("16.Actual     : %%\n");
-
-	printf("17.Expected   : %i\n", alen);
-	_printf("17.Actual     : %i\n", elen);
-
-	elen = printf("18.Expected   : %%%%\n");
-	alen = _printf("18.Actual     : %%%%\n");
-
-	printf("19.Expected   : %i\n", elen);
-	_printf("19.Actual     : %i\n", alen);
-
-	printf("20.Expected   :");
-	printf("%");
-	printf("\n");
-	_printf("20.Actual     :");
-	_printf("%");
-	_printf("\n");
+	printf("6. Positive %d\n", 647);
+	_printf("6. Positive %d\n",647);
 
 
 return (0);
