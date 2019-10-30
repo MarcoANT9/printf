@@ -17,7 +17,8 @@ int p_int(va_list n)
 	if (h == 0)
 	{
 		_putchar('0');
-		return (1);
+		i++;
+		return (i);
 	}
 
 	if (h < 0)
@@ -27,6 +28,7 @@ int p_int(va_list n)
 	}
 	else
 		g = h;
+
 	f = g; /** Temp var */
 	while (g != 0)
 	{
@@ -43,5 +45,7 @@ int p_int(va_list n)
 		b = b / 10;
 		c = c - 1;
 	}
+	if (h < 0)
+		i++;
 	return (i);
 }
